@@ -1,4 +1,5 @@
 from review import Review
+from restaurant import Restaurant
 
 class Customer:
     all_customers = []
@@ -35,11 +36,11 @@ class Customer:
     def all(cls):
         return cls.all_customers
     
-    def restaurant(self):
-        return [review.restaurant() for review in self.reviews]
+    def reviewed_restaurants(self):
+        return [review.restaurant_review().restaurant_name() for review in self.reviews]
     
-    def add_review(self,restaurant,rating):
-        added_review = Review(self,restaurant,rating)
+    def add_review(self, restaurant, rating):
+        added_review = Review(self, restaurant, rating)
         self.reviews.append(added_review)
         restaurant.reviews.append(added_review)
     
@@ -47,19 +48,27 @@ class Customer:
         return len(self.reviews)
     
     @classmethod
-    def find_by_name(cls,name ):
+    def find_by_name(cls, name):
         for customer in cls.all_customers:
             if customer.full_name() == name:
                 return customer
             
     @classmethod
     def find_all_by_given_name(cls, name):
-        matching_customers = [customer for customer in cls.all_customers if customer.given_name.lower() == name.lower()]
+        matching_customers = [customer.name for customer in cls.all_customers if customer.given_name.lower() == name.lower()]
         return matching_customers
 
     
+customerA = Customer("james", "murush")
+customerB = Customer("james", "nigga")
+
+# Assuming "tasty bites" and "brocoli eats" are instances of the Restaurant class
+restaurantA = Restaurant("tasty bites")
+restaurantB = Restaurant("brocoli eats")
+
+customerA.add_review(restaurantA, 9)
+customerB.add_review(restaurantB, 10)
+
+print(Customer.find_all_by_given_name("james"))
 
 
-
-
-    

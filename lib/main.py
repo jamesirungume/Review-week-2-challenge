@@ -3,22 +3,22 @@ from customer import Customer
 from restaurant import Restaurant
 
 
-# Create instances of Customer and Restaurant
-customer1 = Customer("John", "Doe")
+
+customer1 = Customer("James", "Murigu")
 customer2 = Customer("Jane", "Smith")
 
-restaurant1 = Restaurant("Tasty Bites")
-restaurant2 = Restaurant("Fancy Eats")
+restaurantA = Restaurant("Cook Room")
+restaurantB = Restaurant("Healthy Dish")
 
-# Customers leave reviews for restaurants
-customer1.add_review(restaurant1, 4)
-customer2.add_review(restaurant2, 5)
 
-# Print restaurant names
-print("Restaurant Names:", restaurant1.restaurant_name(), restaurant2.restaurant_name())
+customer1.add_review(restaurantA, 2)
+customer2.add_review(restaurantB, 1)
 
-# Print reviews and customers
-for restaurant in [restaurant1, restaurant2]:
+
+print("Restaurant Names:", restaurantA.restaurant_name(), restaurantB.restaurant_name())
+
+
+for restaurant in [restaurantA, restaurantB]:
     print("Reviews for", restaurant.restaurant_name())
     for review in restaurant.reviews:  
         print("Customer:", review.customer.full_name(), "Rating:", review.rating)
