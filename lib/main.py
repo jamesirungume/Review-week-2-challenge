@@ -19,7 +19,7 @@ print("Restaurant Names:", restaurantA.restaurant_name(), restaurantB.restaurant
 # Print reviews and customers for each restaurant
 for restaurant in [restaurantA, restaurantB]:
     print("Reviews for", restaurant.restaurant_name())
-    for review in restaurant.reviews:
+    for review in restaurant.reviews:  # Changed to get_reviews()
         print("Customer:", review.customer_review().full_name(), "Rating:", review.rating)
 
     print("Customers who reviewed", restaurant.restaurant_name())
