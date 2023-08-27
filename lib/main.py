@@ -1,4 +1,4 @@
-
+from review import Review
 from customer import Customer
 from restaurant import Restaurant
 
