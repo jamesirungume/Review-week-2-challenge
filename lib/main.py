@@ -1,4 +1,4 @@
-from review import Review
+
 from customer import Customer
 from restaurant import Restaurant
 
@@ -13,7 +13,6 @@ restaurantB = Restaurant("Healthy Dish")
 
 customer1.add_review(restaurantA, 2)
 customer2.add_review(restaurantB, 1)
-
 
 print("Restaurant Names:", restaurantA.restaurant_name(), restaurantB.restaurant_name())
 
