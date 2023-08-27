@@ -82,3 +82,5 @@ for restaurant in [tasty_bites, fancy_eats]:
         print("Customer:", customer.full_name())
 
 
+## License
+This project is licensed under the terms of the MIT License
