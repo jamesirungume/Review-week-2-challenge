@@ -18,5 +18,8 @@ class Review:
     @classmethod
     def all(cls):
         return cls.all_reviews
+  
 
+    def __str__(self):
+        return f"{self.customer.full_name()} reviewed {self.restaurant.restaurant_name()} with rating {self.rating}"
 
