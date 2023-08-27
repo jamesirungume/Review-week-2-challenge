@@ -1,3 +1,5 @@
+
+
 class Restaurant:
     all_restaurants =[]
 
@@ -15,6 +17,8 @@ class Restaurant:
     def customers(self):
        return [review.customer for review in self.reviews]
     
-    def average_satr_rating(self):
-        total_sum_rating = sum(review.rating() for review in self.reviews)
+    def average_star_rating(self):
+        total_sum_rating = sum(review.rating for review in self.reviews)
         return total_sum_rating/len(self.reviews)
+
+

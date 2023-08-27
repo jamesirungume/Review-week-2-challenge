@@ -59,16 +59,6 @@ class Customer:
         return matching_customers
 
     
-customerA = Customer("james", "murush")
-customerB = Customer("james", "nigga")
 
-# Assuming "tasty bites" and "brocoli eats" are instances of the Restaurant class
-restaurantA = Restaurant("tasty bites")
-restaurantB = Restaurant("brocoli eats")
-
-customerA.add_review(restaurantA, 9)
-customerB.add_review(restaurantB, 10)
-
-print(Customer.find_all_by_given_name("james"))
 
 
