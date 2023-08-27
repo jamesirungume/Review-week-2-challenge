@@ -18,7 +18,7 @@ class Customer:
     def given_name(self, new_name):
         self.name = new_name
     
-    @property
+   
     def last_name(self):
         return self.family_name
     
